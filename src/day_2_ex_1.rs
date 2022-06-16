@@ -12,7 +12,7 @@ struct DirectionError {
 
 impl fmt::Display for DirectionError {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "Direction cannot be parsed from command string")
+        write!(f, "Direction cannot be parsed from command string: {}", self.msg)
     }
 }
 
