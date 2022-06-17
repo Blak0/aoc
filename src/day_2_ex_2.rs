@@ -5,8 +5,6 @@ use std::path::Path;
 
 use itertools::Itertools;
 
-use crate::main;
-
 #[derive(Debug)]
 struct Direction {
     x: i32,
@@ -90,6 +88,6 @@ pub fn solution() {
             Err(msg) => panic!("{}", msg),
         }
     }
-    
+
     println!("{}", main_command.x * main_command.y);
 }
