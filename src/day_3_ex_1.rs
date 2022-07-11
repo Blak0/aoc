@@ -49,7 +49,7 @@ pub fn solution() {
         .map(|byte| if *byte == 1 { 0 } else { 1 })
         .collect_vec();
 
-    let to_bin = |bit_vec: &[i32]| -> i32 {
+    let from_bin = |bit_vec: &[i32]| -> i32 {
         bit_vec
             .iter()
             .rev()
@@ -57,5 +57,5 @@ pub fn solution() {
             .fold(0, |acc, (idx, byte)| acc + 2i32.pow(idx as u32) * byte)
     };
 
-    println!("{}", to_bin(&delta) * to_bin(&gamma));
+    println!("{}", from_bin(&delta) * from_bin(&gamma));
 }
