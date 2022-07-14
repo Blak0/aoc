@@ -7,7 +7,6 @@ use itertools::Itertools;
 
 #[derive(Default, Debug)]
 struct BingoTable {
-    id: u8,
     size: usize,
     number_table: Vec<Vec<u8>>,
     checked_table: Vec<Vec<bool>>,
@@ -16,10 +15,9 @@ struct BingoTable {
 impl BingoTable {
     fn new(id: u8, table: Vec<Vec<u8>>) -> BingoTable {
         BingoTable {
-            id,
             size: table
                 .get(0)
-                .expect(format!("Error when parsing {id} table").as_str())
+                .unwrap_or_else(|| panic!("Error when parsing {id} table"))
                 .len(),
             number_table: table,
             checked_table: vec![vec![false; 5]; 5],
@@ -58,7 +56,7 @@ impl BingoTable {
                 }
             }
         }
-        return last_number as u32 * sum;
+        last_number as u32 * sum
     }
 }
 
@@ -74,7 +72,7 @@ pub fn solution() {
     let moves = lines
         .next()
         .expect("File empty")
-        .split(",")
+        .split(',')
         .map(str::parse::<u8>)
         .map(Result::unwrap)
         .collect_vec();
@@ -87,7 +85,7 @@ pub fn solution() {
                 .skip(1)
                 .take(5)
                 .map(|line| {
-                    line.split(" ")
+                    line.split(' ')
                         .filter(|x| !x.is_empty())
                         .map(str::to_owned)
                         .collect_vec()
@@ -118,7 +116,6 @@ pub fn solution() {
             0 => continue,
             1 => {
                 println!("{:?}", winner_tables[0].calculate_score(m));
-
                 break;
             }
             _ => panic!("What now? :D"),
