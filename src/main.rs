@@ -1,5 +1,5 @@
-mod day_4_ex_2;
+mod day_5_ex_1;
 
 fn main() {
-    day_4_ex_2::solution();
+    day_5_ex_1::solution();
 }
