@@ -3,10 +3,25 @@
 version = 3
 
 [[package]]
-name = "aoc"
+name = "aoc-lib"
 version = "0.1.0"
 dependencies = [
  "itertools",
+]
+
+[[package]]
+name = "benchmarks"
+version = "0.1.0"
+dependencies = [
+ "aoc-lib",
+ "iai",
+]
+
+[[package]]
+name = "cargo-bin"
+version = "0.1.0"
+dependencies = [
+ "aoc-lib",
 ]
 
 [[package]]
@@ -14,6 +29,12 @@ name = "either"
 version = "1.6.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e78d4f1cc4ae33bbfc157ed5d5a5ef3bc29227303d595861deb238fcec4e9457"
+
+[[package]]
+name = "iai"
+version = "0.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "71a816c97c42258aa5834d07590b718b4c9a598944cd39a52dc25b351185d678"
 
 [[package]]
 name = "itertools"

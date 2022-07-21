@@ -10,7 +10,7 @@ pub fn solution() {
     let f = File::open(path).expect("file not found");
 
     let reader = BufReader::new(f);
-
+    
     let line = reader
         .lines()
         .take(1)

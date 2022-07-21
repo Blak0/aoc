@@ -175,6 +175,6 @@ pub fn solution() {
         .flatten()
         .filter(|cell| **cell > 1)
         .count();
-
+    
     println!("{}", num_of_overlaps);
 }
