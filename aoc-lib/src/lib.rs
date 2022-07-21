@@ -1,1 +1,1 @@
-pub mod day_7_ex_1;
+pub mod day_7_ex_2;

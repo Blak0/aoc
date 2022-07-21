@@ -1,3 +1,3 @@
-use aoc_lib::day_7_ex_1::solution;
+use aoc_lib::day_7_ex_2::solution;
 
 iai::main!(solution);
